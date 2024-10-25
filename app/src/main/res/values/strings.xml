@@ -56,4 +56,25 @@
     <string name="contentDescriptionSliderHeight">Slider para sumar o restar altura</string>
     <string name="contentDescriptionSubtractAge">Restar edad</string>
     <string name="contentDescriptionPlusAge">Sumar edad</string>
+    <string name="calculate">Calcular</string>
+    <string name="textResult">Tu resultado : %s</string>
+    <string name="reCalculate">Re - calcular</string>
+    <string name="error">Error</string>
+    <string name="errorDescription">!ups.. ocurrió un error</string>
+
+    <string name="underWeightError">Bajo peso</string>
+    <string name="underWeightDescription">Tu peso se encuentra por debajo de lo normal. Puedes comer un poco más.</string>
+    <string name="underWeightMessage">!!Sube de peso</string>
+
+    <string name="overWeightError">Sobre peso</string>
+    <string name="overWeightDescription">Tu peso se encuentra por encima de lo normal. Puedes bajar de peso.</string>
+    <string name="overWeightDescriptionMessage">!!Baja de peso</string>
+
+    <string name="obesityError">Obesidad</string>
+    <string name="obesityDescription">Tu peso se encuentra por encima de lo normal más aún del sobrepeso. Puedes bajar de peso.</string>
+    <string name="obesityDescriptionMessage">!!Baja de peso</string>
+
+    <string name="weightSuccess">Peso óptimo</string>
+    <string name="weightSuccessDescription">Tu peso se encuentra en el rango normal. ¡Felicitaciones!</string>
+    <string name="weightSuccessDescriptionMessage">!!Sigue así</string>
 </resources>

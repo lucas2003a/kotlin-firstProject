@@ -36,4 +36,14 @@
         android:text="IMC calculador - App"
         android:layout_marginTop="10dp"
         android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTodoApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/teal_700"
+        android:text="TODO - App"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white" />
 </LinearLayout>

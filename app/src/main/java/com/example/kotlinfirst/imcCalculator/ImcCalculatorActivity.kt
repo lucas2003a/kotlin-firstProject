@@ -1,8 +1,11 @@
 package com.example.kotlinfirst.imcCalculator
 
 import android.app.backup.BackupAgent
+import android.content.Intent
 import android.icu.text.DecimalFormat
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +24,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isFemaleSelected    : Boolean  = false;
     private var currentWeight        : Int      = 60;
     private var currentAge           : Int      = 10;
+    private var currentHeight        : Int      = 120;
 
     private lateinit var viewFemale         : CardView;
     private lateinit var viewMale           : CardView;
@@ -32,6 +36,11 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var btnPlusWeight      : FloatingActionButton;
     private lateinit var btnSubtractAge     : FloatingActionButton;
     private lateinit var btnPlusAge         : FloatingActionButton;
+    private lateinit var btnCalculateIMC    : Button;
+
+    companion object {
+        const val IMC_KEY = "IMC_RESULT"
+    };
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +66,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnPlusWeight       = findViewById(R.id.btnPlusWeight);
         btnSubtractAge      = findViewById(R.id.btnSubtractAge);
         btnPlusAge          = findViewById(R.id.btnPlusAge);
+        btnCalculateIMC     = findViewById(R.id.calculateIMC);
     }
 
     private fun initListeners(){
@@ -72,8 +82,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
         rngSliderHeight.addOnChangeListener{_, value,_ ->
             val decimalFormat = DecimalFormat("#.##");
-            val result = decimalFormat.format(value);
-            tvHeight.text = getString(R.string.heightFormat, result);
+            currentHeight = decimalFormat.format(value).toInt();
+            tvHeight.text = getString(R.string.heightFormat, currentHeight.toString());
         };
 
         btnSubtractWeight.setOnClickListener{
@@ -91,6 +101,27 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnPlusAge.setOnClickListener {
             plusAge();
         }
+
+        btnCalculateIMC.setOnClickListener {
+            calculateIMC();         //  calculate the IMC
+            navigateToImcResult();  //  go to result
+        }
+    }
+
+    private fun navigateToImcResult(){
+        val imcResult = calculateIMC();
+        val intent = Intent(this, ImcCalculatorResult :: class.java);
+        intent.putExtra(IMC_KEY, imcResult);
+        startActivity(intent);
+    }
+    private fun calculateIMC() : Double {
+
+        val df = DecimalFormat("#.##");
+        val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100);
+        val result = df.format(imc).toDouble();
+        Log.i("Lucas","El IMC es $imc") //Log
+        showMessage("El cálculo del IMC es $result") //Toast
+        return result;
     }
 
     private fun changeGeneder(){
