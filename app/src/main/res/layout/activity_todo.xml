@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".todoApp.TodoActivity">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_todo_app"
+        android:orientation="vertical"
+        tools:context=".todoApp.TodoActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="44dp"
+            android:text="@string/textWelcomeTodoApp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <!--region : NOTE Categories-->
+
+        <TextView
+            style="@style/TodoTextViewSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todoAppTvCategory" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--endregion : NOTE Categories-->
+
+        <!--region : NOTE Tasks-->
+
+        <TextView
+            style="@style/TodoTextViewSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/todoAppTvTasks" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <!--endregion : NOTE Tasks-->
+
+
+    </LinearLayout>
+
+    <!--region : NOTE FloatingActionButton-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/white"
+        android:layout_margin="32dp"
+        android:src="@drawable/plus"
+        android:backgroundTint="@color/accent_todo_app"
+        app:fabSize="auto"
+        android:tooltipText="Hola"
+        android:layout_gravity="end|bottom"
+        />
+    <!--endregion : NOTE FloatingActionButton-->
+</FrameLayout>

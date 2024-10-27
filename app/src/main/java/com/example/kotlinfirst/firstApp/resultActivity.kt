@@ -1,4 +1,4 @@
-package com.example.kotlinfirst.firtsApp
+package com.example.kotlinfirst.firstApp
 
 import android.os.Bundle
 import android.widget.TextView

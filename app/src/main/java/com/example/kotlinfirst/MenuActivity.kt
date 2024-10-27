@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.kotlinfirst.firtsApp.FirstAppActivity
-import com.example.kotlinfirst.firtsApp.MainActivity
+import com.example.kotlinfirst.firstApp.FirstAppActivity
+import com.example.kotlinfirst.firstApp.MainActivity
 import com.example.kotlinfirst.imcCalculator.ImcCalculatorActivity
 import com.example.kotlinfirst.todoApp.TodoActivity
 

@@ -18,4 +18,14 @@
     <color name="textColorObesity">#BC0C00</color>
     <color name="textColorError">#ED1506</color>
     <color name="textColorSuccessWeight">#27BC2D</color>
+
+    <!--TodoApp-->
+    <color name="background_card_todo_app">#FF081A4A</color>
+    <color name="background_disabled_todo_app">#787878</color>
+    <color name="background_todo_app">#FF2D4993</color>
+    <color name="subtitle_text_todo_app">#959595</color>
+    <color name="accent_todo_app">#E91E63</color>
+    <color name="business_category_todo_app">#FF9800</color>
+    <color name="personal_category_todo_app">#00BCD4</color>
+    <color name="other_category_todo_app">#4CAF50</color>
 </resources>

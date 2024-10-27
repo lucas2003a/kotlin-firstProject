@@ -77,4 +77,16 @@
     <string name="weightSuccess">Peso óptimo</string>
     <string name="weightSuccessDescription">Tu peso se encuentra en el rango normal. ¡Felicitaciones!</string>
     <string name="weightSuccessDescriptionMessage">!!Sigue así</string>
+
+    <!--region : TODO APP-->
+    <string name="textWelcomeTodoApp">Bienvenido !!</string>
+    <string name="todoAppTvCategory">Categorías</string>
+    <string name="todoAppTvTasks">Tareas</string>
+
+    <string name="todoAppTvBusiness">Negocios</string>
+    <string name="todoAppTvPersonal">Personal</string>
+    <string name="todoAppTvOthers">Otros</string>
+    <!--endregion : TODO APP-->
+
+
 </resources>
